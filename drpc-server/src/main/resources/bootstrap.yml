@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: dataset-center
+    # 环境 dev|test|pre|prod
+  profiles:
+    active: ${ENV:dev}

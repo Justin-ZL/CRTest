@@ -1,0 +1,37 @@
+# mysql
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    #MySQL配置
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.16.16.34:3306/dataset_center?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+    username: dataset_center
+    password: Datasetcenter@2022
+  redis:
+    open: true  # 是否开启redis缓存  true开启   false关闭
+    database: 2
+    host: 172.16.0.10
+    port: 63379
+    password: Ds@Redis@123654   # 密码（默认为空）
+    timeout: 6000ms  # 连接超时时长（毫秒）
+    jedis:
+      pool:
+        max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1ms      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 10      # 连接池中的最大空闲连接
+        min-idle: 5       # 连接池中的最小空闲连接
+
+out:
+  url:
+    admin: "http://tianji-admin.test.deepwisdomai.com/admin/sys/log/save"
+
+# ceph/minio 文件存储配置信息
+boto3:
+  access_key: "1O8WJ1EC77JG6S0TI5TR"
+  secret_key: "Xmm3vztjEbeABQsriFbGmCbyN9c8fugNd6rxXHX9"
+  endpoint: "https://minio.external-test.metadl.com"
+  bucketName: "pretrain"
+
+harbor:
+  username: testtest
+  password: Dw@123654
